@@ -1,0 +1,24 @@
+return array.filter(item => !args.includes(item))
+
+
+
+
+//Long Form but works too
+const result = [];
+    
+    for (let i = 0; i < array.length; i++) {
+        let shouldKeep = true;
+        
+        for (let j = 0; j < args.length; j++) {
+            if (array[i] === args[j]) {
+                shouldKeep = false;
+                break;
+            }
+        }
+        
+        if (shouldKeep) {
+            result.push(array[i]);
+        }
+    }
+    
+    return result;
